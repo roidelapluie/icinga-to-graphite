@@ -5,5 +5,5 @@ awk_sript="/usr/local/lib/transform_perfdata.awk"
 
 tmpfile="$(mktemp)"
 mv "$1" "${tmpfile}"
-awk -f "${awk_script}"< "$tmpfile" > /dev/tcp/${graphite_host}/${graphite_port}
+awk -f "${awk_script}"< "$tmpfile" > /dev/tcp/${carbon_host}/${carbon_port}
 rm "${tmpfile}"
