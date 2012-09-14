@@ -19,6 +19,10 @@ Example command:
 
 
 
+* To view the datas in Graphite, I recommend to use the *"Graph options -> Line mode -> Connected line"* or the graphite function *keepLastValue()*.
+* Keep in mind that some checks can use different unit: 5Mb, then 5Gb.
+
+
 
 
 
