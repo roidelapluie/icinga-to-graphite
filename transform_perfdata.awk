@@ -1,19 +1,19 @@
 BEGIN {
-    FS="\t"
+    FS="|"
 }
 
-$8 ~ /[0-9]/ {
+$9 ~ /[0-9]/ {
     #Replace ponctuation marks
     gsub(/ /,"_",$3);
-    gsub(/ /,"_",$4);
+    gsub(/ /,"_",$5);
     gsub(/-/,"_",$3);
-    gsub(/-/,"_",$4);
+    gsub(/-/,"_",$5);
     gsub(/\./,"_",$3);
-    gsub(/\./,"_",$4);
+    gsub(/\./,"_",$5);
 
 
 
-    split($8, perfdatas, " ");
+    split($9, perfdatas, " ");
     old_string="";
 
     # We want to trasform 'foo bar=5 bar foo=6' in:
@@ -39,7 +39,7 @@ $8 ~ /[0-9]/ {
                 value=gensub(/[^=]*=([0-9.]+).*/, "\\1", "g", perfdata)
                 if (value != perfdata){
                     # This is the actual value sent to graphite
-                    print "monitoring.nagios."$3"."$4"."name" "value" "$2
+                    print "monitoring.nagios."$3"."$5"."name" "value" "$1
                 }
             # We found actual data, so we can empty the prefix string
             prefix_string=""
