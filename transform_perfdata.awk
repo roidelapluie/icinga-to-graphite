@@ -2,6 +2,9 @@ BEGIN {
     FS="\t"
 }
 
+# emptying the prefix for each line
+prefix_string=""
+
 $8 ~ /[0-9]/ {
     #Replace ponctuation marks
     gsub(/ /,"_",$3);
