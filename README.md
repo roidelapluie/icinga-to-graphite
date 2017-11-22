@@ -1,3 +1,10 @@
+## DEPRECATED
+
+Icinga2 comes with way better integrations and these scripts are no longer relevant.
+
+
+
+## README (2012)
 This script sends the Nagios/Icinga perfdatas into Graphite.
 
 
